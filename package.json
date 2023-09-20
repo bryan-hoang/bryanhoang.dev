@@ -1,0 +1,26 @@
+{
+	"name": "bryanhoang.dev",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"astro": "astro",
+		"build": "astro build",
+		"check": "biome check",
+		"dev": "astro dev",
+		"preview": "astro preview"
+	},
+	"dependencies": {
+		"astro": "5.2.6"
+	},
+	"devDependencies": {
+		"@astrojs/ts-plugin": "1.10.4",
+		"@biomejs/biome": "1.9.4",
+		"prettier": "3.5.0",
+		"prettier-plugin-astro": "0.14.1"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@biomejs/biome"
+		]
+	}
+}
