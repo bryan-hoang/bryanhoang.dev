@@ -1,0 +1,350 @@
+---
+
+---
+
+<header class="container help" id="help-container">
+	<section>
+		<h2>KEY BINDINGS</h2>
+		<div>
+			<p>h &nbsp;&nbsp; show help</p>
+			<p>q &nbsp;&nbsp; go back</p>
+			<p>j &nbsp;&nbsp; scroll up</p>
+			<p>k &nbsp;&nbsp; scroll down</p>
+			<p>gg &nbsp; scroll to top</p>
+			<p>G &nbsp;&nbsp; scroll bottom</p>
+			<p>1-9&nbsp; relative movements</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>SOURCE</h2>
+		<div>
+			<p>
+				<a
+					href="https://github.com/bryan-hoang/bryanhoang.dev/"
+					target="_blank"
+				>
+					https://github.com/bryan-hoang/bryanhoang.dev/
+				</a>
+			</p>
+		</div>
+	</section>
+</header>
+
+<main class="container" id="main-container">
+	<section>
+		<h2>NAME</h2>
+		<div>
+			<p>bryan-hoang — Bryan Hoang</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>SYNOPSIS</h2>
+		<div>
+			<p>
+				<!-- <span class="command"> -->
+				<!-- 	<a href="https://blog.bryanhoang.dev/" target="_blank"> -->
+				bryan-hoang
+				<!-- 	</a> -->
+				<!-- </span> -->
+				[<span class="argument">OPTIONS</span>]
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>DESCRIPTION</h2>
+		<div>
+			<p>
+				Full-stack software developer. Open source enjoyer. Split keyboard
+				enthusiast. Stays up to date on trendy tech & experiments with terminal
+				stuff.
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>PROJECTS</h2>
+		<div>
+			<p>
+				<a href="https://github.com/bryan-hoang/aoc-cli-node" target="_blank"
+					>aoc-cli-node</a
+				>
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>SUPPORTED EXTENSIONS</h2>
+		<div>
+			<p>*.sh, *.js, *.ts, *.py</p>
+			<p>*.rb, *.html, *.css</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>ENVIRONMENT VARIABLES</h2>
+		<div>
+			<h3>LANG</h3>
+			<p class="indented">en_CA.UTF-8</p>
+			<h3>CONFIG</h3>
+			<p class="indented">
+				<a href="https://github.com/bryan-hoang/dotfiles" target="_blank"
+					>i3, neovim, wezterm…</a
+				>
+			</p>
+			<h3>CONTENT</h3>
+			<p class="indented">
+				<a href="https://github.com/bryan-hoang" target="_blank">github</a>
+				<!-- , -->
+				<!-- <a href="https://blog.bryanhoang.dev" target="_blank">blog</a> -->
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>SEE ALSO</h2>
+		<div>
+			<p>
+				<a href="mailto:bryan@bryanhoang.dev" target="_blank">email</a>(4),
+				<a href="https://www.linkedin.com/in/bryan-c-hoang/" target="_blank"
+					>linkedin</a
+				>(4),
+				<a href="https://twitter.com/bryan_c_hoang/" target="_blank">twitter</a
+				>(4),
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>KNOWN BUGS</h2>
+		<div>
+			<p>
+				Doesn't use <a href="https://archlinux.org" target="_blank">archlinux</a
+				>(2).
+			</p>
+		</div>
+	</section>
+</main>
+
+<footer id="line-counter">&nbsp;Manual page bryan-hoang(1) 0%</footer>
+
+<script>
+	const helpContainer = document.getElementById('help-container')!;
+	const mainContainer = document.getElementById('main-container')!;
+	const lineCounter = document.getElementById('line-counter')!;
+
+	function scrollUp() {
+		window.scrollBy(0, -20);
+	}
+
+	function scrollDown() {
+		window.scrollBy(0, 20);
+	}
+
+	// https://stackoverflow.com/a/8028584/8714233
+	function calcScrollPercent() {
+		const h = document.documentElement,
+			b = document.body,
+			st = 'scrollTop',
+			sh = 'scrollHeight';
+		return Math.ceil(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+	}
+
+	function handleScroll() {
+		let scrollPercent = calcScrollPercent();
+		if (scrollPercent === 100) {
+			lineCounter.innerHTML = '&nbsp;Manual page bryan-hoang(1) (END)';
+			lineCounter.style.filter = 'invert(0%)';
+		} else {
+			if (Number.isNaN(scrollPercent)) {
+				scrollPercent = 0;
+			}
+			lineCounter.innerHTML = `&nbsp;Manual page bryan-hoang(1) ${scrollPercent}%`;
+			lineCounter.style.filter = 'invert(0%)';
+		}
+		if (mainContainer?.style.display === 'none') {
+			lineCounter.innerHTML += ' (press q to go back)';
+		} else {
+			lineCounter.innerHTML += ' (press h for help)';
+		}
+		lineCounter.style.display = 'block';
+	}
+
+	// Makes sure initial scroll % is accurate.
+	handleScroll();
+
+	document.addEventListener('scroll', () => {
+		handleScroll();
+	});
+
+	function isNumber(key: unknown) {
+		return Number.isFinite(Number(key));
+	}
+
+	let strNum = '';
+	let wasGLast = false;
+
+	document.addEventListener('keydown', (e) => {
+		const { key } = e;
+		let repeat = 1;
+		if (key === 'Backspace') {
+			strNum = strNum.substring(0, strNum.length - 1);
+			if (strNum.length === 0) {
+				handleScroll();
+			} else {
+				lineCounter.style.filter = 'invert(100%)';
+				lineCounter.innerHTML = `:${strNum}`;
+			}
+		}
+
+		if (isNumber(key)) {
+			strNum += key;
+			lineCounter.style.filter = 'invert(100%)';
+			lineCounter.innerHTML = `:${strNum}`;
+		} else {
+			if (key === 'Escape') {
+				strNum = '';
+				wasGLast = false;
+				repeat = 0;
+				lineCounter.style.filter = 'invert(100%)';
+				lineCounter.innerHTML = 'ESC';
+			}
+			if (strNum !== '') {
+				repeat = Number(strNum);
+			}
+
+			if (key === 'g') {
+				if (wasGLast) {
+					document.documentElement.scrollTop = 0;
+					handleScroll();
+					repeat = 0;
+				} else {
+					wasGLast = true;
+				}
+			} else {
+				wasGLast = false;
+			}
+
+			if (key === 'G') {
+				document.documentElement.scrollTop =
+					document.documentElement.scrollHeight;
+				handleScroll();
+				repeat = 0;
+			}
+
+			switch (key) {
+				case 'h':
+					mainContainer.style.display = 'none';
+					helpContainer.style.display = 'block';
+					lineCounter.style.display = 'none';
+					handleScroll();
+					break;
+				case 'q':
+					mainContainer.style.display = 'block';
+					helpContainer.style.display = 'none';
+					lineCounter.style.display = 'none';
+					handleScroll();
+					break;
+				case 'j':
+					for (let i = 0; i < repeat; i++) {
+						scrollDown();
+					}
+					break;
+				case 'k':
+					for (let i = 0; i < repeat; i++) {
+						scrollUp();
+					}
+					break;
+			}
+			strNum = '';
+		}
+	});
+</script>
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		font-family: 'Roboto Mono', monospace;
+		font-size: 1em;
+		color: #cdd6f4;
+		background-color: #1e1e2e;
+	}
+	@keyframes intro {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	main {
+		animation: intro 0.3s both;
+		animation-delay: 0.15s;
+	}
+	.help {
+		animation: intro 0.3s both;
+		animation-delay: 0.15s;
+		display: none;
+	}
+	.container {
+		max-width: 45em;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+	h1,
+	h2,
+	h3,
+	p {
+		font-size: 1em;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.command,
+	.argument {
+		font-weight: bold;
+	}
+	.container div h1 {
+		font-weight: normal;
+	}
+	div,
+	p.indented {
+		margin-bottom: 1em;
+	}
+	section div {
+		margin-left: 4em;
+	}
+	p.indented {
+		margin-left: 2em;
+	}
+	a {
+		color: inherit;
+		font-weight: bold;
+		text-decoration: none;
+		&:hover {
+			color: #1e1e2e;
+			background-color: #cdd6f4;
+		}
+	}
+	:global(::selection) {
+		color: #1e1e2e;
+		background: #9399b2;
+	}
+	footer {
+		color: #1e1e2e;
+		background-color: #cdd6f4;
+		text-align: left;
+		padding: 1px;
+		position: sticky;
+		bottom: 0;
+		width: 100%;
+		z-index: 1;
+		max-width: 45em;
+		margin: 0 auto;
+		animation: intro 0.3s both;
+		animation-delay: 0.15s;
+	}
+</style>
