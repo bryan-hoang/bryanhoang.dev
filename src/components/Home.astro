@@ -149,7 +149,9 @@
 			b = document.body,
 			st = 'scrollTop',
 			sh = 'scrollHeight';
-		return Math.ceil(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+		return Math.ceil(
+			((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100,
+		);
 	}
 
 	function handleScroll() {
@@ -266,6 +268,9 @@
 <style>
 	* {
 		box-sizing: border-box;
+	}
+	:root {
+		color-scheme: only dark;
 	}
 	body {
 		font-family: 'Roboto Mono', monospace;
