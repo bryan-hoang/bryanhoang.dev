@@ -13,7 +13,7 @@
 		"astro": "5.14.3"
 	},
 	"devDependencies": {
-		"@astrojs/check": "0.9.4",
+		"@astrojs/check": "0.9.5",
 		"@astrojs/ts-plugin": "1.10.5",
 		"@biomejs/biome": "2.2.6",
 		"husky": "9.1.7",
