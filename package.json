@@ -13,10 +13,8 @@
 		"astro": "6.1.1"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.3",
 		"@astrojs/ts-plugin": "1.10.7",
 		"husky": "9.1.7",
-		"typescript": "5.9.3",
 		"vite-plus": "latest"
 	},
 	"engines": {
