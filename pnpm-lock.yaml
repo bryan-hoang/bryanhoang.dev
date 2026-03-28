@@ -10,7 +10,7 @@ importers:
     dependencies:
       astro:
         specifier: 5.18.1
-        version: 5.18.1(@types/node@24.10.1)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1)
+        version: 5.18.1(@types/node@24.10.1)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.3)
     devDependencies:
       '@astrojs/check':
         specifier: 0.9.5
@@ -25,8 +25,8 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: 16.2.7
-        version: 16.2.7
+        specifier: 16.4.0
+        version: 16.4.0
       prettier:
         specifier: 3.5.1
         version: 3.5.1
@@ -1024,8 +1024,8 @@ packages:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
 
-  commander@14.0.2:
-    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+  commander@14.0.3:
+    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
     engines: {node: '>=20'}
 
   common-ancestor-path@1.0.1:
@@ -1348,8 +1348,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  lint-staged@16.2.7:
-    resolution: {integrity: sha512-lDIj4RnYmK7/kXMya+qJsmkRFkGolciXjrsZ6PC25GdTfWOAWetR0ZbsNXRAj1EHHImRSalc+whZFg56F5DVow==}
+  lint-staged@16.4.0:
+    resolution: {integrity: sha512-lBWt8hujh/Cjysw5GYVmZpFHXDCgZzhrOm8vbcUdobADZNOK/bRshr2kM3DfgrrtR1DQhfupW9gnIXOfiFi+bw==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -1531,10 +1531,6 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  nano-spawn@2.0.0:
-    resolution: {integrity: sha512-tacvGzUY5o2D8CBh2rrwxyNojUsZNU2zjNTzKQrkgGJQTbGAfArVWXSKMBokBeeg6C7OLRGUEyoFlYbfeWQIqw==}
-    engines: {node: '>=20.17'}
-
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -1613,11 +1609,6 @@ packages:
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
-
-  pidtree@0.6.0:
-    resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
-    engines: {node: '>=0.10'}
-    hasBin: true
 
   postcss@8.5.6:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
@@ -1831,6 +1822,10 @@ packages:
 
   tinyexec@1.0.2:
     resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
+    engines: {node: '>=18'}
+
+  tinyexec@1.0.4:
+    resolution: {integrity: sha512-u9r3uZC0bdpGOXtlxUIdwf9pkmvhqJdrVCH9fapQtgy/OeTTMZ1nqH7agtvEfmGui6e1XxjcdrlxvxJvc3sMqw==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -2184,6 +2179,11 @@ packages:
 
   yaml@2.8.1:
     resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
+  yaml@2.8.3:
+    resolution: {integrity: sha512-AvbaCLOO2Otw/lW5bmh9d/WEdcDFdQp2Z2ZUH3pX9U2ihyUY0nvLv7J6TrWowklRGPYbB/IuIMfYgxaCPg5Bpg==}
     engines: {node: '>= 14.6'}
     hasBin: true
 
@@ -2912,7 +2912,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.18.1(@types/node@24.10.1)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.1):
+  astro@5.18.1(@types/node@24.10.1)(rollup@4.53.2)(typescript@5.9.3)(yaml@2.8.3):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.6
@@ -2969,8 +2969,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.17.5
       vfile: 6.0.3
-      vite: 6.4.1(@types/node@24.10.1)(yaml@2.8.1)
-      vitefu: 1.1.1(vite@6.4.1(@types/node@24.10.1)(yaml@2.8.1))
+      vite: 6.4.1(@types/node@24.10.1)(yaml@2.8.3)
+      vitefu: 1.1.1(vite@6.4.1(@types/node@24.10.1)(yaml@2.8.3))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -3090,7 +3090,7 @@ snapshots:
 
   commander@11.1.0: {}
 
-  commander@14.0.2: {}
+  commander@14.0.3: {}
 
   common-ancestor-path@1.0.1: {}
 
@@ -3466,15 +3466,14 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  lint-staged@16.2.7:
+  lint-staged@16.4.0:
     dependencies:
-      commander: 14.0.2
+      commander: 14.0.3
       listr2: 9.0.5
-      micromatch: 4.0.8
-      nano-spawn: 2.0.0
-      pidtree: 0.6.0
+      picomatch: 4.0.3
       string-argv: 0.3.2
-      yaml: 2.8.1
+      tinyexec: 1.0.4
+      yaml: 2.8.3
 
   listr2@9.0.5:
     dependencies:
@@ -3841,8 +3840,6 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  nano-spawn@2.0.0: {}
-
   nanoid@3.3.11: {}
 
   neotraverse@0.6.18: {}
@@ -3916,8 +3913,6 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.3: {}
-
-  pidtree@0.6.0: {}
 
   postcss@8.5.6:
     dependencies:
@@ -4223,6 +4218,8 @@ snapshots:
 
   tinyexec@1.0.2: {}
 
+  tinyexec@1.0.4: {}
+
   tinyglobby@0.2.15:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.3)
@@ -4348,7 +4345,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.4.1(@types/node@24.10.1)(yaml@2.8.1):
+  vite@6.4.1(@types/node@24.10.1)(yaml@2.8.3):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -4359,11 +4356,11 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.10.1
       fsevents: 2.3.3
-      yaml: 2.8.1
+      yaml: 2.8.3
 
-  vitefu@1.1.1(vite@6.4.1(@types/node@24.10.1)(yaml@2.8.1)):
+  vitefu@1.1.1(vite@6.4.1(@types/node@24.10.1)(yaml@2.8.3)):
     optionalDependencies:
-      vite: 6.4.1(@types/node@24.10.1)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@24.10.1)(yaml@2.8.3)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.11):
     dependencies:
@@ -4517,6 +4514,8 @@ snapshots:
   yaml@2.2.2: {}
 
   yaml@2.8.1: {}
+
+  yaml@2.8.3: {}
 
   yargs-parser@21.1.1: {}
 
