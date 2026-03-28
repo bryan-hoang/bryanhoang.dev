@@ -4,30 +4,35 @@
 	"scripts": {
 		"astro": "astro",
 		"build": "astro build",
-		"check": "astro check && biome check",
+		"check": "pnpm dlx @astrojs/check",
 		"dev": "astro dev",
 		"prepare": "husky",
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"astro": "5.15.9"
+		"astro": "6.1.1"
 	},
 	"devDependencies": {
-		"@astrojs/check": "0.9.5",
-		"@astrojs/ts-plugin": "1.10.5",
-		"@biomejs/biome": "2.4.4",
+		"@astrojs/check": "^0.9.3",
+		"@astrojs/ts-plugin": "1.10.7",
 		"husky": "9.1.7",
-		"lint-staged": "16.2.7",
-		"prettier": "3.5.1",
-		"prettier-plugin-astro": "0.14.1",
-		"typescript": "5.9.3"
+		"typescript": "5.9.3",
+		"vite-plus": "latest"
 	},
-	"packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017",
+	"packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
 	"pnpm": {
+		"packageExtensions": {
+			"@voidzero-dev/vite-plus-core": {
+				"peerDependencies": {
+					"vite-plus": "*"
+				}
+			}
+		},
+		"overrides": {
+			"vite": "npm:@voidzero-dev/vite-plus-core@latest"
+		},
 		"onlyBuiltDependencies": [
-			"@biomejs/biome",
-			"esbuild",
-			"sharp"
+			"esbuild"
 		]
 	}
 }

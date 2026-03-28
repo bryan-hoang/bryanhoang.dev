@@ -39,7 +39,8 @@ pnpm build
 
 ## Acknowledgments
 
-Inspired by [@orhun](https://github.com/orhun)'s [personal website](https://orhun.dev/).
+Inspired by [@orhun](https://github.com/orhun)'s
+[personal website](https://orhun.dev/).
 
 ## Contributing
 
