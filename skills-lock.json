@@ -1,10 +1,15 @@
 {
 	"version": 1,
 	"skills": {
+		"astro": {
+			"source": "astrolicious/agent-skills",
+			"sourceType": "github",
+			"computedHash": "ebefe26b231d32379c14e41a46c2de7b4b0184543bedab7febdabe4fb21fba4e"
+		},
 		"vercel-cli": {
 			"source": "vercel/vercel",
 			"sourceType": "github",
-			"computedHash": "657b90f14ba7bb8b68279d50c7c5d0b9033dc0a847e345eb18fdfbe8e46aaa3b"
+			"computedHash": "d45f913d342cd4eed63e586f194641882aeded904458428b267556b2110f71bb"
 		}
 	}
 }
