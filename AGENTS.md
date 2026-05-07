@@ -10,7 +10,7 @@ Vite+ is distinct from Vite, but it invokes Vite through `vp dev` and
 
 ## Vite+ Workflow
 
-`vp` is a global binary that handles the full development lifecycle. Run
+`vp` is a global binary that handles the full development life cycle. Run
 `vp help` to print a list of commands and `vp <command> --help` for information
 about a specific command.
 
@@ -117,3 +117,32 @@ with a single action.
 - [ ] Run `vp install` after pulling remote changes and before getting started.
 - [ ] Run `vp check` and `vp test` to validate changes.
 <!--VITE PLUS END-->
+
+## Repository Guide for bryanhoang.dev
+
+### Architecture & Framework
+
+- This is a personal website built with **Astro**.
+- The `src/` directory contains the website structure (`src/pages`,
+  `src/components`, `src/layouts`).
+- It functions as a single-page site simulating a man page, with interactions
+  handled via JS and CSS in the components.
+
+### Commands & Verification
+
+- **Dev Server**: `vp run dev` (Starts `astro dev`. Do **not** use `vp dev` as
+  it starts Vite instead of Astro).
+- **Build**: `vp run build` (Starts `astro build`. Do **not** use `vp build`).
+- **Verification (Run these before pushing)**:
+  1. `vp check` (Runs Vite+'s formatter, linter, and TS type checks)
+  2. `vp run check` (Runs Astro-specific type checking via `@astrojs/check`)
+  3. `vp run build` (Ensures the Astro build succeeds) Note: CI will fail if any
+     of these steps fail.
+
+### Toolchain & Package Management
+
+- Always use `vp` commands (`vp install`, `vp add`, `vp remove`) for package
+  management. It wraps `pnpm` under the hood.
+- Do not use `pnpm`, `npm`, or `yarn` directly.
+- Git hooks (Husky) automatically run `vp staged` which triggers
+  `vp check --fix && vp run check` on staged files.
