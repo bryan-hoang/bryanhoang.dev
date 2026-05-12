@@ -20,7 +20,7 @@
 	"engines": {
 		"node": "24.x"
 	},
-	"packageManager": "pnpm@10.33.3",
+	"packageManager": "pnpm@11.1.0",
 	"pnpm": {
 		"packageExtensions": {
 			"@voidzero-dev/vite-plus-core": {
