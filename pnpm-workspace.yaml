@@ -1,3 +1,19 @@
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vite-plus: latest
+overrides:
+  vite: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - yaml
+enableGlobalVirtualStore: false
+trustPolicyExclude:
+  # `@astrojs/check`
+  - chokidar@4.0.3
