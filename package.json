@@ -15,26 +15,10 @@
 	"devDependencies": {
 		"@astrojs/ts-plugin": "1.10.7",
 		"husky": "9.1.7",
-		"vite-plus": "latest"
+		"vite-plus": "catalog:"
 	},
 	"engines": {
 		"node": "24.x"
 	},
-	"packageManager": "pnpm@11.1.0",
-	"pnpm": {
-		"packageExtensions": {
-			"@voidzero-dev/vite-plus-core": {
-				"peerDependencies": {
-					"vite-plus": "*"
-				}
-			}
-		},
-		"overrides": {
-			"vite": "npm:@voidzero-dev/vite-plus-core@latest"
-		},
-		"onlyBuiltDependencies": [
-			"esbuild",
-			"sharp"
-		]
-	}
+	"packageManager": "pnpm@11.1.0"
 }
