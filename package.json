@@ -10,7 +10,7 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"astro": "6.3.7"
+		"astro": "6.3.8"
 	},
 	"devDependencies": {
 		"@astrojs/ts-plugin": "1.10.9",
