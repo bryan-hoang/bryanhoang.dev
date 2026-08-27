@@ -10,10 +10,10 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"astro": "7.2.1"
+		"astro": "7.2.4"
 	},
 	"devDependencies": {
-		"@astrojs/ts-plugin": "1.10.10",
+		"@astrojs/ts-plugin": "1.10.11",
 		"husky": "9.1.7",
 		"vite-plus": "catalog:"
 	},
